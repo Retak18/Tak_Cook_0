@@ -18,17 +18,22 @@ app.use('/image', express.static(path.join(__dirname, 'public', 'image')));
 const recipeRoutes = require('./routes/recipe')
 
 console.log("Tentative de connexion à MongoDB avec:", 
-    CONNECT_STRING?.substring(0, 20) + "...[restant masqué]");
+    CONNECT_STRING?.substring(0, 16) + "...[restant masqué]");
 // Vérifiez si la chaîne commence bien par le bon préfixe
-console.log("Starts with mongodb+srv://:", CONNECT_STRING.startsWith("mongodb+srv://"));
+// console.log("Starts with mongodb+srv://:", CONNECT_STRING.startsWith("mongodb+srv://"));
 
 // Affichez les premiers caractères pour voir s'il y a des caractères invisibles
-console.log("First 20 characters:", [...CONNECT_STRING].slice(0, 20));
-mongoose.connect(CONNECT_STRING, { connectTimeoutMS: 2000 })
+// console.log("First 20 characters:", [...CONNECT_STRING].slice(0, 20));
+mongoose.connect(CONNECT_STRING, { connectTimeoutMS: 5000,
+                                    connectTimeoutMS: 5000,
+                                    socketTimeoutMS: 5000,
+                                })
     .then(()=> {
         console.log('Tak Mongo is connected');
     }) .catch((error) =>{
-        console.error(error)
+        console.error(error);
+            // Important: terminer le processus en cas d'échec de connexion
+    process.exit(1);
     });
 
     //cors config includind the vercel front domain
