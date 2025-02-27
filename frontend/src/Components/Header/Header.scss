@@ -1,0 +1,93 @@
+.header{
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(55, 55, 56);
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
+    h1{
+        margin-bottom: 50px;
+        color: #AE2017;
+    }
+    
+    input{
+        background-color: white;
+        color: black;
+        width: 379px;
+        border-radius: 50px;
+        height: 51px;
+       
+       
+    }
+    
+    button{
+        max-width: 179px;
+        width: 150px;
+        height: 36px;
+        display: flex;
+        color: rgb(213, 213, 213);
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        background-color: #AE2017;
+        
+    }
+    button:hover{
+        background-color: rgb(55, 55, 56);
+        color:#AE2017;
+        border:1px solid #AE2017;
+    }
+    
+    .button{
+        position:absolute;
+        right: 66px;
+        bottom: 17px;
+    }
+    form{
+        max-width: 379px;
+        width: 100%;
+        height: 1px;
+        margin-bottom: 180px;
+    }
+    /* Link{
+        color: white;
+    }
+    Link:focus{
+        color: white;
+    } */
+    .suggestion {
+        
+        color: black;
+        background: white;
+        border: 1px solid #b0b0b0;
+        width: 340px;
+        z-index: 100;
+        list-style:none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .suggestion li {
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .suggestion li:hover {
+        background: #f0f0f0;
+    }
+    .suggestionCase{
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+    }
+}
