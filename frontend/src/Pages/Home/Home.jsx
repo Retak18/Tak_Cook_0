@@ -73,7 +73,7 @@ const Home = () => {
             formDataSended.append('image', formData.image);
         }
         try {
-            const response = await fetch('http://localhost:3003/recipes', {
+            const response = await fetch(`${process.env.API_URL}/recipes`, {
                 method: "POST",
                 body: formDataSended,
             });
@@ -106,7 +106,7 @@ const Home = () => {
     //-----------------variable pour afficher toutes les recettes-----
     const getRecipes = async () => {
         try {
-            const response = await fetch('http://localhost:3003/recipes');
+            const response = await fetch(`${process.env.API_URL}/recipes`);
             const data = await response.json();
             console.log('Donnée récuperées:', data);
             setRecipes(data);
@@ -117,7 +117,7 @@ const Home = () => {
     // -------------ici on répète la variable d'appel car par défault on veut toutes les recettes
     const getCategories = async () => {
         try {
-            const response = await fetch('http://localhost:3003/recipes');
+            const response = await fetch(`${process.env.API_URL}/recipes`);
             const data = await response.json();
             setSelectedCategory('Tous', data);
         } catch (error) {
